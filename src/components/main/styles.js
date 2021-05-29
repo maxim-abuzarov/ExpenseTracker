@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 export default makeStyles((theme) => ({
     media: {
         height: 0,
-        paddingTop: "56.25%", // 16:9
+        paddingTop: "56.25%",
     },
     expand: {
         transform: "rotate(0deg)",
@@ -20,5 +20,20 @@ export default makeStyles((theme) => ({
     },
     divider: {
         margin: "20px 0",
+    },
+    title: {
+        textAlign: 'center',
+        padding: '5px !important'
+    },
+    positive: {
+        color: 'green',
+        margin: '0'
+    },
+    negative: {
+        color: 'red',
+        margin: '0'
+    },
+    card: {
+        borderBottom: "15px solid cyan",
     },
 }));

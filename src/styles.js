@@ -13,8 +13,9 @@ export default makeStyles((theme) => ({
     },
     main: {
         [theme.breakpoints.up("sm")]: {
-            paddingBottom: "5%",
+            marginBottom: "5%",
         },
+        marginBottom: '100px',
     },
     last: {
         [theme.breakpoints.down("sm")]: {
@@ -24,7 +25,7 @@ export default makeStyles((theme) => ({
     },
     grid: {
         "& > *": {
-            margin: theme.spacing(2),
+            margin: theme.spacing(3),
         },
     },
 }));

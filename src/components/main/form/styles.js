@@ -7,6 +7,6 @@ export default makeStyles(() => ({
         marginBottom: "-10px",
     },
     button: {
-        marginTop: "30px",
+        marginTop: "20px",
     },
 }));

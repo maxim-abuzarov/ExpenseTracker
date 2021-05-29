@@ -12,11 +12,11 @@ const Details = ({title}) => {
     return (
         <Card className={title === "Income" ? classes.income : classes.expense}>
 
-            <CardHeader title={title} />
+            <CardHeader className={classes.cardHeader} title={title} />
 
-            <CardContent>
-                <Typography variant="h5">${total}</Typography>
-                <Doughnut type='doughnut' data={chartData} />
+            <CardContent className={classes.content}>
+                <Typography className={classes.total} variant="h5">$ {total}</Typography>
+                <Doughnut className={classes.d} type="doughnut" data={chartData}/>
             </CardContent>
 
         </Card>

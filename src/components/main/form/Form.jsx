@@ -7,6 +7,7 @@ import {useSpeechContext} from "@speechly/react-client";
 
 import useStyles from "./styles";
 import {incomeCategories, expenseCategories} from "../../../constants/categories";
+import CustomizedSnackbar from "../../snackbar/Snackbar";
 
 const initialState = {
     amount: '',
@@ -20,11 +21,13 @@ const Form = () => {
     const [formData, setFormData] = useState(initialState);
     const {addTransaction} = useContext(ExpenseTrackerContext);
     const {segment} = useSpeechContext();
+    const [open, setOpen] = useState(false);
 
     const createTransaction = () => {
         if (Number.isNaN(Number(formData.amount)) || !formData.date.includes('-')) return;
         const transaction = {...formData, amount: Number(formData.amount), id: uuidv4()};
         if (formData.amount && formData.category) {
+            setOpen(true);
             addTransaction(transaction);
             setFormData(initialState);
         }
@@ -72,6 +75,8 @@ const Form = () => {
     return (
         <Grid container spacing={2}>
 
+            <CustomizedSnackbar open={open} setOpen={setOpen} />
+
             <Grid item xs={12}>
                 <Typography align="center" variant="subtitle2" gutterBottom>
                     {segment && segment.words.map((word) => word.value).join(" ")}
@@ -104,7 +109,7 @@ const Form = () => {
             </Grid>
 
             <Grid item xs={6}>
-                <TextField type="number" label="Amount" value={formData.amount} onChange={(e) => setFormData({...formData, amount: e.target.value})} fullWidth/>
+                <TextField type="number"  label="Amount" value={formData.amount} onChange={(e) => setFormData({...formData, amount: e.target.value < 0 ? (e.target.value = 1) : e.target.value})} fullWidth/>
             </Grid>
 
             <Grid item xs={6}>
