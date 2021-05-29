@@ -5,9 +5,9 @@
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "*",
+    "@material-ui/lab": "^4.0.0-alpha.58",
     "@speechly/react-client": "^0.0.20",
-    "@speechly/react-ui": "*",
+    "@speechly/react-ui": "^1.2.9",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
